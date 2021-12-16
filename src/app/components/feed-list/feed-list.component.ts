@@ -13,18 +13,28 @@ export class FeedListComponent implements OnInit, OnDestroy {
   feedSubscription: Subscription = new Subscription();
   feeds: Feed[] = [];
 
+  loadMoreMessage = 'Load more';
+
   constructor(private feedService: FeedService) { }
 
   ngOnInit(): void {
     this.feedService.getFirstFeeds();
 
     this.feedSubscription = this.feedService.getFeedUpdateListener().subscribe((feeds) => {
+      if (feeds.length == 0){
+        this.loadMoreMessage = 'No more posts!';
+        return;
+      }
       this.feeds = feeds;
     });
   }
 
   ngOnDestroy(): void {
     this.feedSubscription.unsubscribe();
+  }
+
+  onLoadMoreClick() {
+    this.feedService.getMoreFeeds();
   }
 
 

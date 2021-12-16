@@ -30,6 +30,11 @@ export class FeedService {
     });
   }
 
+  getMoreFeeds() {
+    this.page++;
+    this.getFeeds();
+  }
+
   getFeedUpdateListener() {
     return this.feedSub.asObservable();
   }

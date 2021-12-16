@@ -3,3 +3,8 @@
 </div>
 
 <h1 *ngIf="feeds.length == 0">Loading</h1>
+
+<div class="load-more">
+  <a *ngIf="loadMoreMessage == 'Load more'" (click)="onLoadMoreClick()">load more</a>
+  <p *ngIf="loadMoreMessage !== 'Load more'" (click)="onLoadMoreClick()">No more Feeds!</p>
+</div>
