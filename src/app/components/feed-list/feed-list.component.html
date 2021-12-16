@@ -1,1 +1,5 @@
-<p>feed-list works!</p>
+<div class="feed-list" *ngIf="feeds">
+  <app-feed *ngFor="let feed of feeds"></app-feed>
+</div>
+
+<h1 *ngIf="feeds.length == 0">Loading</h1>

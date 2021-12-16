@@ -9,6 +9,7 @@ import { CreateFeedComponent } from './components/create-feed/create-feed.compon
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { DaysAgoPipe } from './pipes/days-ago.pipe';
 import { LikePipe } from './pipes/like.pipe';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LikePipe } from './pipes/like.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
