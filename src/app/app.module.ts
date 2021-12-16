@@ -7,6 +7,8 @@ import { FeedListComponent } from './components/feed-list/feed-list.component';
 import { FeedComponent } from './components/feed/feed.component';
 import { CreateFeedComponent } from './components/create-feed/create-feed.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
+import { DaysAgoPipe } from './pipes/days-ago.pipe';
+import { LikePipe } from './pipes/like.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { AvatarComponent } from './components/avatar/avatar.component';
     FeedListComponent,
     FeedComponent,
     CreateFeedComponent,
-    AvatarComponent
+    AvatarComponent,
+    DaysAgoPipe,
+    LikePipe
   ],
   imports: [
     BrowserModule,
