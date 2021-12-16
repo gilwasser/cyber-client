@@ -10,7 +10,6 @@ export class DaysAgoPipe implements PipeTransform {
       const today = new Date().getTime();
       const feedTime = new Date(value).getTime()
       const daySince  = Math.floor((today - feedTime) / 86400000);
-      console.log(today , feedTime)
       if (daySince == 0){
         return 'Today';
       }
