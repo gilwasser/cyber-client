@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Feed } from '../models/feed.model';
+import { user } from '../currentUser';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,13 @@ export class FeedService {
 
   like(id: string) {
     this.http.put(this.baseUrl + 'like/' + id, null).subscribe(() => true, () => false);
+  }
+
+  createFeed(text: string) {
+    this.http.post<Feed>(this.baseUrl, { text: text, user: user._id }).subscribe((feed) => {
+      feed.user = user;
+      this.feeds = [feed, ...this.feeds];
+      this.feedSub.next([...this.feeds]);
+    });
   }
 }

@@ -10,6 +10,7 @@ import { AvatarComponent } from './components/avatar/avatar.component';
 import { DaysAgoPipe } from './pipes/days-ago.pipe';
 import { LikePipe } from './pipes/like.pipe';
 import {HttpClientModule} from '@angular/common/http'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {HttpClientModule} from '@angular/common/http'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

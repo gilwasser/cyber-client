@@ -1,1 +1,12 @@
 <p>create-feed works!</p>
+<div class="form-container">
+  <app-avatar [imgSrc]="currentUser.image" [imgName]="currentUser.name"></app-avatar>
+  <form  >
+    <label for="feedText">Share your thoughts</label>
+    <input  (focus)="show=true" id="feedText" (blur)="show=false" name="feedText" [formControl]="feedText" type="text" autocomplete="off">
+    <div *ngIf="show" class="control-panel">
+      <button  type="button" (mousedown)="onCreateFeed()">Send</button>
+      <button  type="button" (mousedown)="resetFeed()">Cancel</button>
+    </div>
+  </form>
+</div>

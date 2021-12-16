@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { user } from 'src/app/currentUser';
+import { FeedService } from 'src/app/services/feed.service';
 
 @Component({
   selector: 'app-create-feed',
@@ -6,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-feed.component.scss']
 })
 export class CreateFeedComponent implements OnInit {
+  feedText: FormControl;
+  show = false;
+  currentUser = user;
 
-  constructor() { }
+  constructor(private feedService: FeedService) { }
 
   ngOnInit(): void {
+    this.feedText = new FormControl('', [Validators.required, Validators.minLength(3)]);
   }
+
+  onCreateFeed() {
+    this.feedService.createFeed(this.feedText.value);
+    this.resetFeed();
+  }
+
+  resetFeed(){
+    this.feedText.setValue("");
+  }
+
 
 }
