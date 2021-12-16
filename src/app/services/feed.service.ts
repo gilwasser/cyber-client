@@ -38,4 +38,8 @@ export class FeedService {
   getFeedUpdateListener() {
     return this.feedSub.asObservable();
   }
+
+  like(id: string) {
+    this.http.put(this.baseUrl + 'like/' + id, null).subscribe(() => true, () => false);
+  }
 }

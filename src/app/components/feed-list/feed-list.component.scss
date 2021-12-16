@@ -1,0 +1,19 @@
+.feed-list {
+  margin: auto;
+}
+
+.load-more {
+  text-align: center;
+  a {
+    :hover {
+      cursor: pointer;
+    }
+    text-decoration: underline;
+    color: blue;
+
+  }
+}
+
+h1 {
+  text-align: center;
+}

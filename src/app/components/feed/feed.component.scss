@@ -1,0 +1,66 @@
+.card {
+  background-color: rgb(231, 231, 231);
+  width: 100%;
+  margin: auto;
+  margin: 1rem 0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+
+  p {
+    margin: 0.1rem;
+    color: gray;
+  }
+
+  .time{
+    color: rgb(194, 194, 194);
+    font-style: italic;
+  }
+
+  .header-info{
+    flex-grow: 1;
+  }
+}
+
+.like{
+  svg:hover{
+      fill: rgb(141, 141, 241);
+      cursor: pointer;
+  }
+
+  svg:active{
+    fill: rgb(79, 79, 189);
+  }
+  svg {
+    fill: rgb(79, 79, 189);
+
+  }
+
+
+}
+
+.text{
+  margin-left: 4rem;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.flex {
+  display: flex;
+}

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Feed } from 'src/app/models/feed.model';
+import { FeedService } from 'src/app/services/feed.service';
 
 @Component({
   selector: 'app-feed',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feed.component.scss']
 })
 export class FeedComponent implements OnInit {
-
-  constructor() { }
+  @Input() feed: Feed;
+  constructor(private feedsService:FeedService) { }
 
   ngOnInit(): void {
+  }
+
+  onLike(){
+    this.feedsService.like(this.feed._id);
+    this.feed.likes++;
   }
 
 }
